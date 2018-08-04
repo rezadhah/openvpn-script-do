@@ -6,6 +6,8 @@ rm -rf openvpn-ca
 
 sudo apt-get remove -y ufw && sudo apt-get purge -y ufw
 sudo apt-get remove -y openvpn && sudo apt-get purge -y openvpn
+sudo rm -rf /etc/openvpn
+
 killall openvpn
 apt-get update && apt-get -y install openvpn easy-rsa ufw vnstat
 
