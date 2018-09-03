@@ -1,7 +1,8 @@
 #!/bin/bash
 
 cwd=$PWD
-rm $cwd/*.ovpn
+rm -rf client-configs-*
+rm -rf *.ovpn
 rm -rf openvpn-ca
 
 sudo apt-get remove -y ufw && sudo apt-get purge -y ufw
