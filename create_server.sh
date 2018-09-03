@@ -43,6 +43,7 @@ echo "key-direction 0" >> /etc/openvpn/server.conf
 echo "rcvbuf 0" >> /etc/openvpn/server.conf
 echo "sndbuf 0" >> /etc/openvpn/server.conf
 
+sed -i -e 's/comp-lzo /;comp-lzo/g' /etc/openvpn/server.conf
 sed -i -e 's/;tls-auth ta.key 0/tls-auth ta.key 0/g' /etc/openvpn/server.conf
 sed -i -e 's/;cipher AES-128-CBC/cipher AES-128-CBC/g' /etc/openvpn/server.conf
 sed -i -e 's/;user nobody/user nobody/g' /etc/openvpn/server.conf
