@@ -2,7 +2,6 @@
 
 cwd=$PWD
 IS_WINDOWS=0
-USER_COUNT=1
 
 if [ $# -eq 0 ]; then
   echo "Please input user name (without space) in argument"
@@ -43,13 +42,13 @@ sed -i -e 's/remote my-server-1 1194/remote '"$ip"' 1194/g' $cwd/client-configs-
 sed -i -e 's/ca ca.crt/# ca ca.crt/g' $cwd/client-configs-${1}/base.conf
 sed -i -e 's/cert client.crt/# cert client.crt/g' $cwd/client-configs-${1}/base.conf
 sed -i -e 's/key client.key/# key client.key/g' $cwd/client-configs-${1}/base.conf
-sed -i -e 's/comp-lzo /;comp-lzo/g' $cwd/client-configs-${1}/base.conf
 echo "cipher AES-128-CBC" >> $cwd/client-configs-${1}/base.conf
 echo "auth SHA512" >> $cwd/client-configs-${1}/base.conf
 echo "key-direction 1" >> $cwd/client-configs-${1}/base.conf
-echo "rcvbuf 0" >> $cwd/client-configs-${1}/base.conf
-echo "sndbuf 0" >> $cwd/client-configs-${1}/base.conf
+# echo "rcvbuf 0" >> $cwd/client-configs-${1}/base.conf
+# echo "sndbuf 0" >> $cwd/client-configs-${1}/base.conf
 # echo "setenv opt block-outside-dns" >> $cwd/client-configs-${1}/base.conf
+# sed -i -e 's/comp-lzo /;comp-lzo/g' $cwd/client-configs-${1}/base.conf
 
 echo "IS_WINDOWS == $IS_WINDOWS"
 if [ $IS_WINDOWS -eq 0 ]; then

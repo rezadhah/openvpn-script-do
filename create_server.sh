@@ -40,10 +40,10 @@ gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz | s
 echo "auth SHA512" >> /etc/openvpn/server.conf
 echo "dev tun" >> /etc/openvpn/server.conf
 echo "key-direction 0" >> /etc/openvpn/server.conf
-echo "rcvbuf 0" >> /etc/openvpn/server.conf
-echo "sndbuf 0" >> /etc/openvpn/server.conf
+# echo "rcvbuf 0" >> /etc/openvpn/server.conf
+# echo "sndbuf 0" >> /etc/openvpn/server.conf
+# sed -i -e 's/comp-lzo /;comp-lzo/g' /etc/openvpn/server.conf
 
-sed -i -e 's/comp-lzo /;comp-lzo/g' /etc/openvpn/server.conf
 sed -i -e 's/;tls-auth ta.key 0/tls-auth ta.key 0/g' /etc/openvpn/server.conf
 sed -i -e 's/;cipher AES-128-CBC/cipher AES-128-CBC/g' /etc/openvpn/server.conf
 sed -i -e 's/;user nobody/user nobody/g' /etc/openvpn/server.conf
@@ -59,7 +59,6 @@ echo "# START OPENVPN RULES
 # NAT table rules
 *nat
 :POSTROUTING ACCEPT [0:0] 
-# Allow traffic from OpenVPN client to wlp11s0 (change to the interface you discovered!)
 -A POSTROUTING -s 10.8.0.0/8 -o $interface -j MASQUERADE
 COMMIT
 # END OPENVPN RULES" >> /etc/ufw/before.rules
