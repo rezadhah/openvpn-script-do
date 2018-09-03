@@ -60,4 +60,4 @@ fi
 
 cd $cwd
 ./make_config.sh ${1}
-# awk 'sub("$", "\r")' $cwd/client-configs-${1}/files/${1}.ovpn $cwd/client-configs-${1}/files/${1}.ovpn
+cp $cwd/client-configs-${1}/files/${1}.ovpn $cwd
