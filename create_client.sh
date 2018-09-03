@@ -23,7 +23,7 @@ read -p "Is this for windows user? [Y/N]" answer
       break
       ;;
     *)
-      echo "Existing script for invalid answer ... "
+      echo "Exiting script for invalid answer ... "
       exit
       ;;
 esac
