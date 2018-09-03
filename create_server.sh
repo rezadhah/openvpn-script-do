@@ -38,8 +38,8 @@ gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz | s
 
 # edit /etc/openvpn/server.conf
 echo "auth SHA256" >> /etc/openvpn/server.conf
-echo "dev tun" >> /etc/openvpn/server.conf
 echo "key-direction 0" >> /etc/openvpn/server.conf
+# echo "dev tun" >> /etc/openvpn/server.conf
 # echo "rcvbuf 0" >> /etc/openvpn/server.conf
 # echo "sndbuf 0" >> /etc/openvpn/server.conf
 # sed -i -e 's/comp-lzo /;comp-lzo/g' /etc/openvpn/server.conf
