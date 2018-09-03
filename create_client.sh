@@ -43,7 +43,7 @@ sed -i -e 's/ca ca.crt/# ca ca.crt/g' $cwd/client-configs-${1}/base.conf
 sed -i -e 's/cert client.crt/# cert client.crt/g' $cwd/client-configs-${1}/base.conf
 sed -i -e 's/key client.key/# key client.key/g' $cwd/client-configs-${1}/base.conf
 echo "cipher AES-128-CBC" >> $cwd/client-configs-${1}/base.conf
-echo "auth SHA512" >> $cwd/client-configs-${1}/base.conf
+echo "auth SHA256" >> $cwd/client-configs-${1}/base.conf
 echo "key-direction 1" >> $cwd/client-configs-${1}/base.conf
 # echo "rcvbuf 0" >> $cwd/client-configs-${1}/base.conf
 # echo "sndbuf 0" >> $cwd/client-configs-${1}/base.conf
