@@ -36,7 +36,7 @@ sudo cp ca.crt server.crt server.key ta.key dh2048.pem /etc/openvpn
 gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz | sudo tee /etc/openvpn/server.conf
 
 # edit /etc/openvpn/server.conf
-echo "auth SHA256" >> /etc/openvpn/server.conf
+echo "auth SHA512" >> /etc/openvpn/server.conf
 echo "dev tun" >> /etc/openvpn/server.conf
 echo "key-direction 0" >> /etc/openvpn/server.conf
 echo "rcvbuf 0" >> /etc/openvpn/server.conf
