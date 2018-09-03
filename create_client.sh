@@ -48,7 +48,7 @@ echo "auth SHA512" >> $cwd/client-configs-${1}/base.conf
 echo "key-direction 1" >> $cwd/client-configs-${1}/base.conf
 echo "rcvbuf 0" >> $cwd/client-configs-${1}/base.conf
 echo "sndbuf 0" >> $cwd/client-configs-${1}/base.conf
-echo "setenv opt block-outside-dns" >> $cwd/client-configs-${1}/base.conf
+# echo "setenv opt block-outside-dns" >> $cwd/client-configs-${1}/base.conf
 
 echo "IS_WINDOWS == $IS_WINDOWS"
 if [ $IS_WINDOWS -eq 0 ]; then
