@@ -46,6 +46,8 @@ sed -i -e 's/key client.key/# key client.key/g' $cwd/client-configs-${1}/base.co
 echo "cipher AES-128-CBC" >> $cwd/client-configs-${1}/base.conf
 echo "auth SHA256" >> $cwd/client-configs-${1}/base.conf
 echo "key-direction 1" >> $cwd/client-configs-${1}/base.conf
+echo "rcvbuf 0" >> $cwd/client-configs-${1}/base.conf
+echo "sndbuf 0" >> $cwd/client-configs-${1}/base.conf
 
 echo "IS_WINDOWS == $IS_WINDOWS"
 if [ $IS_WINDOWS -eq 0 ]; then
