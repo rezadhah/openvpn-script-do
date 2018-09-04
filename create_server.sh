@@ -39,9 +39,9 @@ gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz | s
 # edit /etc/openvpn/server.conf
 echo "auth SHA256" >> /etc/openvpn/server.conf
 echo "key-direction 0" >> /etc/openvpn/server.conf
-echo "rcvbuf 0" >> /etc/openvpn/server.conf
-echo "sndbuf 0" >> /etc/openvpn/server.conf
-sed -i -e 's/comp-lzo/# comp-lzo/g' /etc/openvpn/server.conf
+# echo "rcvbuf 0" >> /etc/openvpn/server.conf
+# echo "sndbuf 0" >> /etc/openvpn/server.conf
+# sed -i -e 's/comp-lzo/# comp-lzo/g' /etc/openvpn/server.conf
 
 sed -i -e 's/;tls-auth ta.key 0/tls-auth ta.key 0/g' /etc/openvpn/server.conf
 sed -i -e 's/;cipher AES-128-CBC/cipher AES-128-CBC/g' /etc/openvpn/server.conf
@@ -51,7 +51,7 @@ sed -i -e 's/;push "redirect-gateway def1 bypass-dhcp"/push "redirect-gateway de
 sed -i -e 's/;push "dhcp-option DNS 208.67.222.222"/push "dhcp-option DNS 8.8.8.8"/g' /etc/openvpn/server.conf
 sed -i -e 's/;push "dhcp-option DNS 208.67.220.220"/push "dhcp-option DNS 8.8.4.4"/g' /etc/openvpn/server.conf
 sed -i -e 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-sed -i -e 's/;topology subnet/topology subnet/g' /etc/openvpn/server.conf
+# sed -i -e 's/;topology subnet/topology subnet/g' /etc/openvpn/server.conf
 
 interface=$(ip route | grep default | awk '{print $5}')
 echo "# START OPENVPN RULES
